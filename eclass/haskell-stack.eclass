@@ -19,6 +19,14 @@ estack() {
     stack --stack-root="$(getent passwd portage | cut -d: -f6)/.stack" "${@}"
 }
 
+# @FUNCTION: estack
+# @DESCRIPTION:
+# estack wrapper that installs binaries in \${T}/bin
+# TODO
+estack_install() {
+    mkdir -p "${T}/bin"
+    estack install --local-bin-path "${T}/bin" "${@}"
+}
 
 # @FUNCTION: stack_flag
 # @DESCRIPTION:
