@@ -1,6 +1,6 @@
 # Gentoo Haskell Stack Overlay
 
-Gentoo overlay for installing haskell software via `stack`
+Gentoo overlay for installing haskell software via [stack](https://www.haskellstack.org)
 
 ## Why
 
@@ -36,7 +36,7 @@ EOF
 
 There are currently only two packages (to test this approach)
 - `dev-haskell/stack-bin` - binary distribution of stack
-- `dev-vcs/git-annex` - git file manager with plenty of dependencies in gentoo or gentoo-haskell 
+- `dev-vcs/git-annex` - git file manager with plenty of dependencies in gentoo or gentoo-haskell, based on the ebuild from [gentoo-haskell/gentoo-haskell](https://github.com/gentoo-haskell/gentoo-haskell)
 
 ## Discalmer
 This is just a proof of concept project. I would love to see this approach more adopted, please feel free to contact me/contribute/fork.
