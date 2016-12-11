@@ -1,0 +1,11 @@
+diff --git a/stack.yaml b/stack.yaml
+index 560c194..2089c7a 100644
+--- a/stack.yaml
++++ b/stack.yaml
+@@ -39,7 +39,8 @@ packages:
+ - '.'
+ # Dependency packages to be pulled from upstream that are not in the resolver
+ # (e.g., acme-missiles-0.3)
+-extra-deps: []
++extra-deps:
++- X11-xft-0.3.1
