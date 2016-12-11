@@ -16,10 +16,23 @@ inherit eutils
 # stack wrapper that is using stack-root in home directory of portage user
 # TODO
 estack() {
+
     stack --stack-root="$(getent passwd portage | cut -d: -f6)/.stack" "${@}"
 }
 
-# @FUNCTION: estack
+# @FUNCTION: estack_init
+# @DESCRIPTION:
+# stack wrapper that is using stack-root in home directory of portage user
+# TODO
+estack_init() {
+    if [[ -n "${STACK_RESOLVER}" ]]; then
+        estack init --resolver "${STACK_RESOLVER}" "${@}"
+    else
+        estack init "${@}"
+    fi
+}
+
+# @FUNCTION: estack_install
 # @DESCRIPTION:
 # estack wrapper that installs binaries in \${T}/bin
 # TODO

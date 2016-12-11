@@ -12,6 +12,10 @@ This has two major consequences:
 
 Every haskell library or program has a unique set of dependencies. Possibly requiring different version of ghc as well. Stack is here to help.
 
+## Known issues
+
+- `stack.yaml` is usually not bundled in the hackage dist package (see #1)
+
 ## How to use it
 
 Please amend `location` and `priority` to suit your needs.
@@ -25,6 +29,11 @@ sync-uri = git://github.com/j1r1k/gentoo-haskell-stack.git
 priority = 0
 EOF
 ```
+## Configuration
+
+### Portage ENV variables
+
+- `$STACK_RESOLVER` - stack resolver to be used when running `stack init` inside the build
 
 ## Important notes
 
@@ -34,9 +43,12 @@ EOF
 
 ## Contents of this overlay
 
-There are currently only two packages (to test this approach)
+Most importantly:
 - `dev-haskell/stack-bin` - binary distribution of stack
-- `dev-vcs/git-annex` - git file manager with plenty of dependencies in gentoo or gentoo-haskell, based on the ebuild from [gentoo-haskell/gentoo-haskell](https://github.com/gentoo-haskell/gentoo-haskell)
+
+Otherwise:
+- I am adding packages as I need them. I am basing ebuilds on ebuilds from [gentoo-haskell/gentoo-haskell](https://github.com/gentoo-haskell/gentoo-haskell)
+
 
 ## Discalmer
 This is just a proof of concept project. I would love to see this approach more adopted, please feel free to contact me/contribute/fork.
