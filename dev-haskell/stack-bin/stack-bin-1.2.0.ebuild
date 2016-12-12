@@ -20,27 +20,27 @@ KEYWORDS="~amd64"
 IUSE="doc"
 
 RDEPEND="
-	>=dev-lang/perl-5.6.1
-	dev-libs/gmp:0=
-	sys-libs/ncurses:=[tinfo,unicode]
-	virtual/libffi:=
+    >=dev-lang/perl-5.6.1
+    dev-libs/gmp:0=
+    sys-libs/ncurses:=[tinfo,unicode]
+    virtual/libffi:=
 "
 
 DEPEND="${RDEPEND}"
 
 src_unpack() {
-	default_src_unpack
-	mv -i "${WORKDIR}/stack-${PV}-"* "${WORKDIR}/${PN}-${PV}" || die "Cannot rename source directory"
+    default_src_unpack
+    mv -i "${WORKDIR}/stack-${PV}-"* "${WORKDIR}/${PN}-${PV}" || die "Cannot rename source directory"
 }
 
 src_install() {
-	dobin "stack"
+    dobin "stack"
 
-	stack --bash-completion-script stack > "${T}/bashcomp" || die "Failed to generate bash-completion script"
+    ./stack --bash-completion-script stack > "${T}/bashcomp" || die "Failed to generate bash-completion script"
 
-	newbashcomp "${T}/bashcomp" "stack"
+    newbashcomp "${T}/bashcomp" "stack"
 
-	if use doc; then
-		dodoc "${S}/doc/*"
-	fi
+    if use doc; then
+        dodoc "${S}/doc/*"
+    fi
 }
