@@ -56,19 +56,19 @@ src_compile() {
     estack_install \
         --ghc-options "-with-rtsopts=-V0" \
         --flag xmobar:-all_extensions \
-        "$(stack_flag xmobar alsa with_alsa)" \
-        "$(stack_flag xmobar with_conduit with_conduit)" \
-        "$(stack_flag xmobar timezone with_datezone)" \
-        "$(stack_flag xmobar dbus with_dbus)" \
-        "$(stack_flag xmobar inotify with_inotify)" \
-        "$(stack_flag xmobar wifi with_iwlib)" \
-        "$(stack_flag xmobar mpd with_mpd)" \
-        "$(stack_flag xmobar mpris with_mpris)" \
+        $(stack_flag xmobar alsa with_alsa) \
+        $(stack_flag xmobar with_conduit with_conduit) \
+        $(stack_flag xmobar timezone with_datezone) \
+        $(stack_flag xmobar dbus with_dbus) \
+        $(stack_flag xmobar inotify with_inotify) \
+        $(stack_flag xmobar wifi with_iwlib) \
+        $(stack_flag xmobar mpd with_mpd) \
+        $(stack_flag xmobar mpris with_mpris) \
         --flag xmobar:with_threaded \
         --flag xmobar:with_utf8 \
-        "$(stack_flag xmobar with_uvmeter with_uvmeter)" \
-        "$(stack_flag xmobar xft with_xft)" \
-        "$(stack_flag xmobar xpm with_xpm)" || die
+        $(stack_flag xmobar with_uvmeter with_uvmeter) \
+        $(stack_flag xmobar xft with_xft) \
+        $(stack_flag xmobar xpm with_xpm) || die
 }
 
 src_install() {
