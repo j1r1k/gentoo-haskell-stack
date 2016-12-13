@@ -5,7 +5,7 @@
 # based on https://github.com/gentoo-haskell/gentoo-haskell/blob/master/dev-vcs/git-annex/git-annex-6.20161118.ebuild
 
 EAPI=6
-inherit haskell-stack
+inherit haskell-stack bash-completion-r1
 
 DESCRIPTION="manage files with git, without checking their contents into git"
 HOMEPAGE="http://git-annex.branchable.com/"
@@ -66,6 +66,7 @@ src_install() {
     newbashcomp "${FILESDIR}"/${PN}.bash ${PN}
 
     dobin "${T}/bin/git-annex"
+    dosym "/usr/bin/git-annex" "${EROOT}/usr/bin/git-annex-shell"
 
     dodoc CHANGELOG README
     if use webapp ; then
